@@ -6,30 +6,31 @@
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
+   <div class="body-container">
     <header class="page-header">
       <nav class="navigation">
-       <img src="images/logo.svg" width="140" height="70" alt="логотип Седона">
-       <ul class="navigation-list">
-         <li class="navigation-item">
-           <a class="navigation-link" href="index.html">Главная</a>
-         </li>
-         <li class="navigation-item">
-            <a class="navigation-link" href="#">О Седоне</a>
-         </li>
-         <li class="navigation-item">
-            <a class="navigation-link" href="catalog.html">Гостиницы</a>
-         </li>
-        </ul>
-        <ul class="navigation-list navigation-user">
+        <img src="images/logo.svg" width="140" height="70" alt="логотип Седона" class="logo">
+        <ul class="navigation-list">
           <li class="navigation-item">
+            <a class="navigation-link" href="index.html">Главная</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">О Седоне</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="catalog.html">Гостиницы</a>
+          </li>
+        </ul>
+        <ul class="navigation-user">
+          <li class="navigation-user-item">
             <button type="button" class="button-search"><span class="visually-hidden">Кнопка поиска</span>
             </button>
           </li>
-          <li class="navigation-item">
-             <button type="button" class="button-like"><span class="visually-hidden">Поставить лайк</span></button>
+          <li class="navigation-user-item">
+            <button type="button" class="button-like"><span class="visually-hidden">Поставить лайк</span></button>
           </li>
-          <li class="navigation-item">
-             <button type="button" class="button-wish"> ХОЧУ СЮДА! </button>
+          <li class="navigation-user-item">
+            <button type="button" class="button-wish"> ХОЧУ СЮДА! </button>
           </li>
          </ul>
       </nav>
@@ -45,7 +46,7 @@
           <form action="#" class="search-options" method="post">
             <fieldset class="infrostructure-options fieldset">
               <legend class="fieldset-header"> Инфраструктура:</legend>
-              <ul class="infrostructure-options">
+              <ul class="infrostructure-options-list">
                 <li class="infrostucture-option">
                   <input type="checkbox" name="pool" id="pool" checked>
                   <label for="pool">Бассейн</label>
@@ -194,6 +195,7 @@
       </ul>
       <p class="contact-phone"><a class="phone-link" href="tel:+7(812)812-12-12">+7 (812) 812-12-12</a></p>
       <a class="academy-link" href="https://htmlacademy.ru/"><img class="footer-logo" src="images/Academy-logo.svg" width="115" height="33" alt="academy-logo"></a>
-  </footer>
+    </footer>
+   </div>
   </body>
 </html>
