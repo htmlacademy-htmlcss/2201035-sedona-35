@@ -27,7 +27,7 @@ button {
   font-family: "PT Sans", sans-serif;
   font-weight: 700;
 }
-ul, ol {
+ul, ol, h1, h2, h3, button, input {
   margin: 0px;
   padding: 0px;
 }
@@ -204,9 +204,9 @@ li.advantage:nth-child(3) {
 }
 
 .mailing {
-  width: 1200px;
-  height: 415px;
-  margin: auto;
+  padding-top: 96px;
+  padding-bottom: 104px;
+  padding-left: ;
 }
 .white-text-mailing {
   color: #FFFFFF;
@@ -216,8 +216,10 @@ li.advantage:nth-child(3) {
   background-color: #82B3D3;
   color: #FFFFFF;
   border: none;
+  border-radius: 0px 4px 4px 0px;
   font-size: 20px;
   line-height: 36px;
+  padding: 8px 50px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -279,12 +281,15 @@ li.advantage:nth-child(3) {
   font-size: 60px;
   line-height: 78px;
   margin: 0px;
+  margin-bottom: 8px;
 }
 
 .home-link {
   display: block;
+  position: relative;
   width: 13px;
   height: 15px;
+  margin-right: 28px;
   background-image: url(../images/to-home-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -465,14 +470,23 @@ li:first-child .pagination-link {
 }
 /*/catalog-main*/
 /*sticky-footer*/
+
+html {
+  height: 100%;
+}
 .body-container {
   min-height: 100%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   width: 1200px;
-  grid-template-rows: auto 1fr auto;
   margin-left: auto;
   margin-right: auto;
   background-color: #FFFFFF;
+}
+
+.page-content {
+  flex-grow: 1;
 }
 
 .navigation {
@@ -480,6 +494,7 @@ li:first-child .pagination-link {
   margin: 0px;
   padding: 0px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -496,6 +511,7 @@ li:first-child .pagination-link {
   margin-right: 70px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .navigation-list {
@@ -522,6 +538,7 @@ li:first-child .pagination-link {
  }
 
  .advantage {
+  box-sizing: border-box;
   width: 400px;
   height: 384px;
  }
@@ -553,6 +570,7 @@ li:first-child .pagination-link {
     display: flex;
     margin: 0px;
     padding: 0px;
+    flex-wrap: wrap;
   }
 
   .search-options {
@@ -602,6 +620,7 @@ li:first-child .pagination-link {
     padding-top: 50px;
     padding-left: 70px;
     padding-right: 70px;
+    padding-bottom: 60px;
   }
   .search-results-header {
     display: flex;
@@ -644,6 +663,7 @@ li:first-child .pagination-link {
 
   .pagination {
     display: flex;
+    margin-top: 40px;
   }
   .pagination li:not(:last-child) {
     margin-right: 8px;
@@ -658,4 +678,106 @@ li:first-child .pagination-link {
     font-weight: 400;
     justify-content: center;
     align-items: center;
+  }
+
+  .introduction {
+    padding-top: 69px;
+    padding-bottom: 90px;
+  }
+
+  .introduction-text {
+    margin: 0px;
+  }
+
+  .slogan-text {
+    width: 630px;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+  }
+
+  .full-width-advantage .advantage {
+    padding: 92px 85px 111px 85px;
+  }
+
+  .advantages-list .advantage:nth-child(n+2):nth-child(-n+4) {
+    padding: 103px 85px 121px 85px;
+  }
+
+  .advantages-list .advantage:nth-child(n+6) {
+    padding: 182px 85px 81px 85px;
+  }
+
+  .mailing-form {
+    display: flex;
+    justify-content: center;
+    width: 684px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .email {
+    flex-grow: 1;
+    background-color:#F2F2F2;
+    border: none;
+    border-radius: 4px 0px 0px 4px;
+  }
+
+  .index-email {
+    background-color: #FFFFFF;
+  }
+
+  .email::placeholder {
+    font-family: 'PT Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-indent: 20px;
+    line-height: 24px;
+    color: #000000;
+    opacity: 0.6;
+    margin-left: 20px;
+  }
+
+  .to-main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .catalog-link {
+    font-size: 16px;
+    line-height: 21px;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .mailing-text {
+    width: 475px;
+    margin: 0;
+    margin-bottom: 54px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .mailing-header {
+    margin-bottom: 20px;
+  }
+
+  .home-link::after {
+    display: block;
+    content: " ";
+    width: 6.39px;
+    height: 9.94px;
+    background-image: url(../images/>.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 23px;
+    top: 3.5px;
+  }
+
+  .search-results-container {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #E6E6E6;
   }
