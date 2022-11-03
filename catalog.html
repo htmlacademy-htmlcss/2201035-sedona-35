@@ -57,7 +57,7 @@
                 </li>
                 <li class="infrostucture-option">
                   <input type="checkbox" name="wi-fi" id="wi-fi">
-                  <label for="wi-fi"> wi-fi</label>
+                  <label for="wi-fi">wi-fi</label>
                 </li>
               </ul>
             </fieldset>
@@ -81,10 +81,10 @@
             <fieldset class="cost fieldset">
               <legend class="fieldset-header">Стоимость, ₽:</legend>
               <div class="cost-fields">
-                <label><input type="number" name="min-price-field" class="min-price-field" id="min-price-field" value="0">
-                <span>от</span></label>
-                <label><input type="number" name="max-price-field" class="max-price-field" id="max-price-field" value="9000">
-                <span>до</span></label>
+                <label class="min-price-field-label"><input type="number" name="min-price-field" class="min-price-field" id="min-price-field" value="0">
+                <span class="span-from">от</span></label>
+                <label class="max-price-field-label"><input type="number" name="max-price-field" class="max-price-field" id="max-price-field" value="9000">
+                <span class="span-to">до</span></label>
               </div>
               <div class="range-scale">
                 <div class="back-scale"></div>
@@ -94,14 +94,14 @@
               </div>
             </fieldset>
             <div class="buttons">
-              <button class="apply-button" type="submit">Применить</button>
+              <button class="apply-button" type="submit">Применить</button> <br>
               <button class="reset-button" type="reset">Сбросить</button>
             </div>
           </form>
         </section>
         <section class="search-results">
           <div class="search-results-header">
-            <h2 class="number-of-variants">Найдено гостиниц:38</h2>
+            <h2 class="number-of-variants">Найдено гостиниц: 38</h2>
             <select name="filters" id="filters">
               <option value="cheap-first">Сначала дешевые</option>
               <option value="expensive-first">Сначала дорогие</option>
@@ -114,56 +114,48 @@
           </div>
           <div class="search-results-container">
             <div class="hotel">
-              <img src="images/Amara-resort-preview.jpg" width="300" height="212" alt="Пейзаж рядом с amara resort">
+              <img src="images/Amara-resort-preview.jpg" class="hotel-photo" width="300" height="212" alt="Пейзаж рядом с amara resort">
               <h3 class="hotel-name">Amara Resort & Spa</h3>
-              <div class="hotel-grid-container">
-                <p class="hotel-text">Гостиница</p>
-                <p class="price">От 4000 ₽</p>
-                <a class="more-info" href="#">Подробнее</a>
-                <button type="button" name="to-favorite" class="to-favorite">В избранное</button>
-                <div class="star-rating">
-                </div>
-                <p class="number-rating"> Рейтинг:8,5</p>
+              <p class="hotel-text">Гостиница</p>
+              <p class="price">От 4000 ₽</p>
+              <a class="more-info" href="#">Подробнее</a>
+              <button type="button" name="to-favorite" class="to-favorite">В избранное</button>
+              <div class="star-rating">
               </div>
+              <p class="number-rating"> Рейтинг:8,5</p>
             </div>
             <div class="hotel">
-              <img src="images/Villas-at-poco-diablo-preview.jpg" width="300" height="212" alt="Пейзаж рядом с Villas at Poco Diablo">
+              <img src="images/Villas-at-poco-diablo-preview.jpg" class="hotel-photo" width="300" height="212" alt="Пейзаж рядом с Villas at Poco Diablo">
               <h3 class="hotel-name">Villas at Poco Diablo</h3>
-              <div class="hotel-grid-container">
-                <p class="hotel-text">Гостиница</p>
-                <p class="price">От 5000 ₽</p>
-                <a class="more-info" href="#">Подробнее</a>
-                <button type="button" name="in-favorite" class="in-favorite">В избранном</button>
-                <div class="star-rating">
-                </div>
-                <p class="number-rating"> Рейтинг:9,2</p>
+              <p class="hotel-text">Гостиница</p>
+              <p class="price">От 5000 ₽</p>
+              <a class="more-info" href="#">Подробнее</a>
+              <button type="button" name="in-favorite" class="in-favorite">В избранном</button>
+              <div class="star-rating">
               </div>
+              <p class="number-rating"> Рейтинг:9,2</p>
             </div>
             <div class="hotel">
-              <img src="images/Desert-quail-inn-preview.jpg" width="300" height="212" alt="Пейзаж рядом с Desert Quail Inn">
+              <img src="images/Desert-quail-inn-preview.jpg" class="hotel-photo" width="300" height="212" alt="Пейзаж рядом с Desert Quail Inn">
               <h3 class="hotel-name">Desert Quail Inn</h3>
-              <div class="hotel-grid-container">
-                <p class="hotel-text">Гостиница</p>
-                <p class="price">От 2500 ₽</p>
-                <a class="more-info" href="#">Подробнее</a>
-                <button type="button" name="to-favorite" class="to-favorite">В избранное</button>
-                <div class="star-rating">
-                </div>
-                <p class="number-rating"> Рейтинг:6,9</p>
+              <p class="hotel-text">Гостиница</p>
+              <p class="price">От 2500 ₽</p>
+              <a class="more-info" href="#">Подробнее</a>
+              <button type="button" name="to-favorite" class="to-favorite">В избранное</button>
+              <div class="star-rating">
               </div>
+              <p class="number-rating"> Рейтинг:6,9</p>
             </div>
             <div class="hotel">
-              <img src="images/Green-tree-inn-preview.jpg" width="300" height="212" alt="Пейзаж рядом с GreenTree Inn">
+              <img src="images/Green-tree-inn-preview.jpg" class="hotel-photo" width="300" height="212" alt="Пейзаж рядом с GreenTree Inn">
               <h3 class="hotel-name">GreenTree Inn</h3>
-              <div class="hotel-grid-container">
-                <p class="hotel-text">Гостиница</p>
-                <p class="price">От 2500 ₽</p>
-                <a class="more-info" href="#">Подробнее</a>
-                <button type="button" name="to-favorite" class="to-favorite">В избранное</button>
-                <div class="star-rating">
-                </div>
-                <p class="number-rating"> Рейтинг:5,0</p>
+              <p class="hotel-text">Гостиница</p>
+              <p class="price">От 2500 ₽</p>
+              <a class="more-info" href="#">Подробнее</a>
+              <button type="button" name="to-favorite" class="to-favorite">В избранное</button>
+              <div class="star-rating">
               </div>
+              <p class="number-rating"> Рейтинг:5,0</p>
             </div>
           </div>
           <ol class="pagination">
@@ -178,7 +170,7 @@
       </main>
       <article class="mailing">
         <h3 class="mailing-header">Подпишись на рассылку</h3>
-        <p class="mailing-text">Только полезная информация и никакого спама, честное бойскаутское!</p>
+        <p class="mailing-text">Только полезная информация и никакого спама, <br> честное бойскаутское!</p>
         <form action="#" method="post" class="mailing-form">
           <input type="email" name="email" id="email" placeholder="Ваш email" class="email" required>
           <label for="email"><span class="visually-hidden">Ваш email</span></label>

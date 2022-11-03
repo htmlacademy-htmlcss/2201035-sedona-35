@@ -21,16 +21,19 @@ body {
   font-weight: 700;
   color: #000000;
   margin: 0px;
-  background-color: #F2F2F2;;
+  background-color: #F2F2F2;
+  min-height: 100%;
 }
 button {
   font-family: "PT Sans", sans-serif;
   font-weight: 700;
 }
-ul, ol, h1, h2, h3, button, input {
+ul, ol, h1, h2, h3, button, input, p {
   margin: 0px;
   padding: 0px;
+  border: none;
 }
+
 li {
   list-style-type: none;
 }
@@ -48,6 +51,10 @@ li {
   overflow: hidden;
 }
 /*header*/
+.page-header {
+  padding-left: 70px;
+  padding-right: 70px;
+}
 .navigation-link {
   font-size:20px;
   line-height: 24px;
@@ -93,19 +100,20 @@ li {
 /*index-main*/
 .main-header-images {
   margin:auto;
-  width: 1200px;
-  height: 485px;
   background-image:url("../images/welcome-divider.svg"), url("../images/welcome-background.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, center;
   background-size: 100% auto, cover;
   background-color: #5F80A3;
+  padding-top: 51px;
+  padding-bottom: 82px;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 .welcome-graphic {
   display: block;
   margin:auto;
-  padding-top: 51px;
   /*margin-top: auto;
   margin-bottom: auto; почему не работает ?
   Почему отступы через padding?*/
@@ -132,6 +140,7 @@ li {
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
+  margin-bottom: 62px;
 }
 
 .advantage-header {
@@ -139,6 +148,11 @@ li {
   line-height: 28px;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 62px;
+}
+
+.advantage:nth-child(n+6) .advantage-header {
+  margin-bottom: 30px;
 }
 
 .full-width-advantage-text {
@@ -180,19 +194,33 @@ li.advantage:nth-child(3) {
 }
 /*/index-main*/
 /* oofer-mailing*/
+
+.offer {
+  text-align: center;
+  padding: 96px 70px;
+}
+
+.offer-header {
+  margin-bottom: 20px;
+}
+
+.offer-text {
+  margin-bottom: 54px;
+}
+
 .offer-link {
-  display: block;
+  display: inline-block;
   background-color: #756157;
   color:#FFFFFF;
   font-size: 20px;
   line-height: 36px;
   appearance: none;
+  max-width: 400px;
   text-decoration: none;
-  width: 376px;
-  height: 52px;
-  margin: auto;
-  text-align: center;
+  padding: 8px 50px;
   text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
 }
 
 .mailing-index {
@@ -206,7 +234,8 @@ li.advantage:nth-child(3) {
 .mailing {
   padding-top: 96px;
   padding-bottom: 104px;
-  padding-left: ;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 .white-text-mailing {
   color: #FFFFFF;
@@ -262,6 +291,10 @@ li.advantage:nth-child(3) {
   color: #000000;
 }
 
+.footer-logo {
+  margin-right: 3px;
+}
+
 /*/footer*/
 /*catalog-main*/
 
@@ -292,7 +325,7 @@ li.advantage:nth-child(3) {
   margin-right: 28px;
   background-image: url(../images/to-home-icon.svg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top 0.5px;
 }
 
 .fake-link {
@@ -310,6 +343,51 @@ li.advantage:nth-child(3) {
 .infrostucture-option, .housing-option {
   font-weight: 400;
   line-height: 23px;
+  min-width: 150px;
+}
+
+.cost-fields {
+  display: flex;
+}
+.cost-fields input::-webkit-outer-spin-button, .cost-fields input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.min-price-field, .max-price-field {
+font-family: 'PT Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 24px;
+width: 143px;
+height: 48px;
+background-color: #F2F2F2;
+text-indent: 20px;
+}
+
+.min-price-field {
+  border-radius: 4px 0 0 4px;
+  margin-right: 2px;
+}
+
+.max-price-field {
+  border-radius: 0 4px 4px 0;
+}
+
+.min-price-field-label, .max-price-field-label {
+  position: relative;
+  display: inline-block;
+}
+
+.span-from, .span-to {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #000000;
+  opacity: 0.3;
 }
 
 .apply-button, .reset-button {
@@ -319,9 +397,9 @@ li.advantage:nth-child(3) {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
+  padding: 8px 50px;
   text-transform: uppercase;
-  width: 191px;
-  height: 36px;
+  width: 100%;
   border-radius: 4px;
 }
 
@@ -330,7 +408,7 @@ li.advantage:nth-child(3) {
   margin-bottom: 32px;
 }
 .reset-button {
-  background-color: transparent;/*можно ли в rgba формате написать, если во всем файле в формате #xxxxxx ? */
+  background-color: transparent;
 }
 
 .number-of-variants {
@@ -386,16 +464,19 @@ select {
 .hotel-name {
   font-size: 24px;
   line-height: 28px;
+  grid-column: 1/3;
 }
 
 .hotel-text, .price {
   font-weight: 400;
 }
-
+.more-info, .to-favorite, .in-favorite {
+  padding: 8px 5px;
+  border-radius: 4px;
+}
 .more-info {
-  display: block;
-  width: 140px;
-  height: 36px;
+  display: inline-block;
+  padding: 8px 5px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -408,8 +489,6 @@ select {
 .to-favorite {
   font-size: 16px;
   line-height: 20px;
-  width: 140px;
-  height: 36px;
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
@@ -420,8 +499,6 @@ select {
 .in-favorite {
   font-size: 16px;
   line-height: 20px;
-  width: 140px;
-  height: 36px;
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
@@ -438,9 +515,7 @@ select {
 }
 
 .number-rating {
-  display: block;
-  width: 140px;
-  height: 37px;
+  padding: 9px 5px 8px 5px;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -449,6 +524,7 @@ select {
   color: #333333;
   background-color: #F2F2F2;
 }
+
 .pagination-link {
   display: flex;
   width: 60px;
@@ -474,6 +550,7 @@ li:first-child .pagination-link {
 html {
   height: 100%;
 }
+
 .body-container {
   min-height: 100%;
   display: flex;
@@ -498,17 +575,16 @@ html {
 }
 
 .logo {
-  margin-left: 70px;
   margin-right: 30px;
   margin-bottom: -6px;
 }
+
 .logo-main {
   z-index: 1;
 }
 
 .navigation-user {
   margin: 0px;
-  margin-right: 70px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -527,7 +603,7 @@ html {
  }
 
  .navigation-user-item:last-child{
-  padding-left:20px;
+  margin-left:20px;
  }
 
  .advantages-list {
@@ -540,7 +616,7 @@ html {
  .advantage {
   box-sizing: border-box;
   width: 400px;
-  height: 384px;
+  min-height: 384px;
  }
 
  .full-width-advantage {
@@ -552,6 +628,8 @@ html {
 
   .sedona-photo, .canyon-photo {
     flex-grow: 1;
+    height: 100%;
+    object-fit: cover;
   }
 
   footer {
@@ -561,7 +639,7 @@ html {
     padding-top: 40px;
     padding-bottom: 30px;
     padding-left: 70px;
-    padding-right: 73px;
+    padding-right: 70px;
     align-items: center;
     justify-content: space-between;
   }
@@ -576,7 +654,6 @@ html {
   .search-options {
     display: flex;
     align-items:flex-start;
-    justify-content:
   }
 
   .fieldset {
@@ -597,14 +674,12 @@ html {
   .infrostructure-options {
     margin-right: 70px;
   }
-  .infrostructure-options, .type-of-housing {
-    width: 150px;
-  }
+
 
   .buttons {
     margin-left: 70px;
     align-self: flex-end;
-    width: 191px;
+    min-width: 191px;
   }
 
   .infrostucture-option:not(:last-child), .housing-option:not(:last-child) {
@@ -612,7 +687,6 @@ html {
   }
 
   .cost {
-    width: 288px;
     margin-left: auto;
   }
 
@@ -625,6 +699,7 @@ html {
   .search-results-header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 40px;
   }
 
@@ -634,8 +709,10 @@ html {
   }
 
   select {
+    -webkit-appearance: none;
     margin: 0px;
     font-family: "PT Sans";
+    text-indent: 20px;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
@@ -665,6 +742,7 @@ html {
     display: flex;
     margin-top: 40px;
   }
+
   .pagination li:not(:last-child) {
     margin-right: 8px;
   }
@@ -683,6 +761,8 @@ html {
   .introduction {
     padding-top: 69px;
     padding-bottom: 90px;
+    padding-left: 70px;
+    padding-right: 70px;
   }
 
   .introduction-text {
@@ -690,7 +770,6 @@ html {
   }
 
   .slogan-text {
-    width: 630px;
     margin: 0px;
     margin-left: auto;
     margin-right: auto;
@@ -698,15 +777,15 @@ html {
   }
 
   .full-width-advantage .advantage {
-    padding: 92px 85px 111px 85px;
+    padding: 92px 70px 92px 70px;
   }
 
   .advantages-list .advantage:nth-child(n+2):nth-child(-n+4) {
-    padding: 103px 85px 121px 85px;
+    padding: 103px 70px 90px 70px;
   }
 
   .advantages-list .advantage:nth-child(n+6) {
-    padding: 182px 85px 81px 85px;
+    padding: 182px 70px 51px 70px;
   }
 
   .mailing-form {
@@ -722,6 +801,10 @@ html {
     background-color:#F2F2F2;
     border: none;
     border-radius: 4px 0px 0px 4px;
+    font-size: 18px;
+    text-indent: 20px;
+    line-height: 24px;
+    color: #000000;
   }
 
   .index-email {
@@ -753,7 +836,6 @@ html {
   }
 
   .mailing-text {
-    width: 475px;
     margin: 0;
     margin-bottom: 54px;
     margin-right: auto;
@@ -773,11 +855,32 @@ html {
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    left: 23px;
-    top: 3.5px;
+    left: 23.8px;
+    bottom: 2.5px;
   }
 
   .search-results-container {
-    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding-bottom: 39px;
     border-bottom: 1px solid #E6E6E6;
+  }
+
+  .hotel {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 140px 140px;
+    column-gap: 20px;
+    row-gap: 16px;
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+  }
+
+  .hotel-photo {
+    grid-column: 1/3;
+  }
+
+  .price {
+    justify-self: right;
   }
