@@ -29,8 +29,8 @@ button {
   font-weight: 700;
 }
 ul, ol, h1, h2, h3, button, input, p {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   border: none;
 }
 
@@ -67,10 +67,9 @@ li {
   background-color: #FFFFFF;
   background-repeat: no-repeat;
   background-position: center;
-  width: 20px;
-  height: 20px;
+  width: 44px;
+  height: 64px;
   border: none;
-  margin: 22px 12px;
 }
 
 .button-like {
@@ -78,10 +77,10 @@ li {
   background-color: #FFFFFF;
   background-repeat: no-repeat;
   background-position: center;
-  width: 20px;
-  height: 20px;
+  width: 44px;
+  height: 64px;
   border: none;
-  margin: 22px 12px;
+  position: relative;
 }
 
 .likes-number {
@@ -97,8 +96,8 @@ li {
   padding-left: 4px;
   border-radius: 10px;
   color: #FFFFFF;
-  top: -11px;
-  right: -8px;
+  top: 11px;
+  right: 4px;
 
 }
 
@@ -161,6 +160,7 @@ li {
   text-transform: uppercase;
   color: #FFFFFF;
   margin-bottom: 62px;
+  position: relative;
 }
 
 .advantage-header {
@@ -265,7 +265,7 @@ li.advantage:nth-child(3) {
   background-color: #82B3D3;
   color: #FFFFFF;
   border: none;
-  border-radius: 0px 4px 4px 0px;
+  border-radius: 0 4px 4px 0;
   font-size: 20px;
   line-height: 36px;
   padding: 8px 50px;
@@ -319,7 +319,7 @@ li.advantage:nth-child(3) {
   background-size: cover;
   background-position: center;
   background-color: #5F80A3;
-  margin: 0px;
+  margin: 0;
   padding: 70px;
   padding-top: 35px;
 }
@@ -327,7 +327,7 @@ li.advantage:nth-child(3) {
 .search-menu-header {
   font-size: 60px;
   line-height: 78px;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 8px;
 }
 
@@ -412,7 +412,7 @@ text-indent: 20px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  padding: 8px 50px;
+  padding: 5px 50px;
   text-transform: uppercase;
   width: 100%;
   border-radius: 4px;
@@ -423,7 +423,10 @@ text-indent: 20px;
   margin-bottom: 32px;
 }
 .reset-button {
+  box-sizing: border-box;
   background-color: transparent;
+  border: 3px solid transparent;
+  padding: 2px 47px;
 }
 
 .number-of-variants {
@@ -436,12 +439,12 @@ select {
   font-family: "PT Sans";
   line-height: 21px;
   color: #333333;
+  appearance: none;
   -webkit-appearance: none;
-  margin: 0px;
+  margin: 0;
   text-indent: 20px;
   font-weight: 400;
   font-size: 18px;
-  line-height: 21px;
   border: 2px solid #E5E5E5;
   border-radius:4px;
   height: 49px;
@@ -458,7 +461,7 @@ select {
   border-radius: 4px;
   width: 48px;
   height: 48px;
-  padding: 0px;
+  padding: 0;
 }
 
 .display-button-2 {
@@ -470,7 +473,7 @@ select {
   background-color: transparent;
   width: 48px;
   height: 48px;
-  padding: 0px;
+  padding: 0;
 }
 
 .display-button-3 {
@@ -482,7 +485,7 @@ select {
   background-color: transparent;
   width: 48px;
   height: 48px;
-  padding: 0px;
+  padding: 0;
 }
 
 .hotel-name {
@@ -498,13 +501,14 @@ select {
   padding: 8px 5px;
   border-radius: 4px;
 }
+
 .more-info {
   display: inline-block;
   padding: 8px 5px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  align-self: center;
+  align-self:flex-start;
   text-transform: uppercase;
   text-decoration: none;
   color: #FFFFFF;
@@ -516,7 +520,7 @@ select {
   line-height: 20px;
   text-align: center;
   text-transform: uppercase;
-  align-self: center;
+  align-self: flex-start;
   color: #FFFFFF;
   background-color: #82B3D3;
   border: none;
@@ -527,7 +531,7 @@ select {
   line-height: 20px;
   text-align: center;
   text-transform: uppercase;
-  align-self: center;
+  align-self: flex-start;
   color: #FFFFFF;
   background-color:#7DB54F;
   border: none;
@@ -612,7 +616,6 @@ html {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -625,8 +628,8 @@ html {
 
 .navigation {
   display:flex;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -641,14 +644,14 @@ html {
 }
 
 .navigation-user {
-  margin: 0px;
+  margin: 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .navigation-list {
-  margin: 0px;
+  margin: 0;
   margin-right:auto;
   display: flex;
   align-items: center;
@@ -665,8 +668,8 @@ html {
 
  .advantages-list {
   display: flex;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   flex-wrap: wrap;
  }
 
@@ -678,8 +681,8 @@ html {
 
  .full-width-advantage {
   background-color: #82B3D3;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   display: flex;
  }
 
@@ -691,8 +694,8 @@ html {
 
   footer {
     display: flex;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     padding-top: 40px;
     padding-bottom: 30px;
     padding-left: 70px;
@@ -703,8 +706,8 @@ html {
 
   .social-networks {
     display: flex;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     flex-wrap: wrap;
   }
 
@@ -715,18 +718,18 @@ html {
   }
 
   .fieldset {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     padding-top: 32px;
     border: none;
   }
 
   .fieldset-header {
-    padding: 0px;
+    padding: 0;
   }
 
   input {
-    margin: 0px;
+    margin: 0;
   }
 
   .infrostructure-options {
@@ -762,7 +765,7 @@ html {
   }
 
   .number-of-variants {
-    margin: 0px;
+    margin: 0;
     margin-right: auto;
   }
 
@@ -810,11 +813,11 @@ html {
   }
 
   .introduction-text {
-    margin: 0px;
+    margin: 0;
   }
 
   .slogan-text {
-    margin: 0px;
+    margin: 0;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
@@ -832,6 +835,32 @@ html {
     padding: 182px 70px 51px 70px;
   }
 
+  .advantages-list .advantage:nth-child(n+2):nth-child(-n+4) .advantage-header {
+   position: relative;
+  }
+
+  .advantages-list .advantage:nth-child(n+2):nth-child(-n+4) .advantage-header::after {
+    content: " ";
+    background-color: #000000;
+    opacity: 0.3;
+    width: 60px;
+    height: 2px;
+    position: absolute;
+    bottom: -30px;
+    left:100px;
+  }
+
+  .full-width-advantage-header::after {
+    content: " ";
+    background-color: #FFFFFF;
+    opacity: 0.3;
+    width: 60px;
+    height: 2px;
+    position: absolute;
+    bottom: -30px;
+    left: 100px;
+  }
+
   .mailing-form {
     display: flex;
     justify-content: center;
@@ -844,7 +873,7 @@ html {
     flex-grow: 1;
     background-color:#F2F2F2;
     border: none;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 4px 0 0 4px;
     font-size: 18px;
     text-indent: 20px;
     line-height: 24px;
@@ -968,7 +997,7 @@ html {
   }
 
   .reset-button:focus {
-    box-shadow: inset 0px 0px 0px 3px #83B3D3;
+    border: 3px solid #83B3D3;
   }
 
   .reset-button:active {
@@ -1047,4 +1076,18 @@ html {
 
   .home-link:active, .catalog-link:active {
     opacity: 0.3;
+  }
+
+  .active-page {
+    position: relative;
+  }
+
+  .active-page::after {
+    content: " ";
+    width:100%;
+    background-color: #756257;
+    height: 2px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
   }
