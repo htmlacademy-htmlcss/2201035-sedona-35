@@ -1009,7 +1009,7 @@ html {
   }
 
   select:active {
-    border: 2px solid #3F5E72
+    border: 2px solid #3F5E72;
   }
 
   .min-price-field:hover, .max-price-field:hover {
@@ -1090,4 +1090,42 @@ html {
     position: absolute;
     bottom: -20px;
     left: 0;
+  }
+
+  .checkbox {
+    position: relative;
+    display: block;
+    padding-left: 36px;
+  }
+
+  .mark-field {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 0;
+    top: 1.5px;
+    border-radius: 4px;
+    z-index: 1;
+  }
+
+  .input[type="checkbox"], input[type="radio"] {
+    outline: none;
+  }
+  input[type="checkbox"]:checked + .checkbox .mark-field {
+    background-image:url(../images/checkbox-mark.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 4.1px left 4px;
+  }
+
+  input[type="checkbox"]:focus + .checkbox .mark-field::after {
+    content: " ";
+    width: 23px;
+    height: 23px;
+    border-radius: 4px;
+    left: -3px;
+    top: -3px;
+    background-color:#83B3D3;
+    z-index: -1;
   }
