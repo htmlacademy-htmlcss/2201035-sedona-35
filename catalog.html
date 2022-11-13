@@ -17,8 +17,8 @@
           <li class="navigation-item">
             <a class="navigation-link" href="#">О Седоне</a>
           </li>
-          <li class="navigation-item">
-            <a class="navigation-link active-page" href="catalog.html">Гостиницы</a>
+          <li class="navigation-item active-page">
+            <a class="navigation-link" href="catalog.html">Гостиницы</a>
           </li>
         </ul>
         <ul class="navigation-user">
@@ -49,15 +49,15 @@
               <ul class="infrostructure-options-list">
                 <li class="infrostucture-option">
                   <input type="checkbox" name="pool" id="pool" class="visually-hidden" checked>
-                  <label class="checkbox" for="pool"> <span class="mark-field"></span> Бассейн</label>
+                  <label class="checkbox" for="pool"> <span class="checkbox-mark-field"></span> Бассейн</label>
                 </li>
                 <li class="infrostucture-option">
                   <input type="checkbox" name="parking" id="parking" class="visually-hidden" checked>
-                  <label class="checkbox" for="parking"> <span class="mark-field"></span> Парковка</label>
+                  <label class="checkbox" for="parking"> <span class="checkbox-mark-field"></span> Парковка</label>
                 </li>
                 <li class="infrostucture-option">
                   <input type="checkbox" name="wi-fi" class="visually-hidden" id="wi-fi">
-                  <label class="checkbox" for="wi-fi"> <span class="mark-field"></span>wi-fi</label>
+                  <label class="checkbox" for="wi-fi"> <span class="checkbox-mark-field"></span>wi-fi</label>
                 </li>
               </ul>
             </fieldset>
@@ -65,32 +65,33 @@
               <legend class="fieldset-header">Тип жилья:</legend>
               <ul class="housing-options">
                 <li class="housing-option">
-                  <input type="radio" name="options-of-housing" id="hotel" value="hotel">
-                  <label for="hotel">Гостиница</label>
+                  <input type="radio" name="options-of-housing" id="hotel" value="hotel" class="visually-hidden" checked>
+                  <label class="radio" for="hotel"> <span class="radio-mark-field"></span>Гостиница</label>
                 </li>
                 <li class="housing-option">
-                  <input type="radio" name="options-of-housing" id="motel" value="motel">
-                  <label for="motel">Мотель</label>
+                  <input type="radio" name="options-of-housing" id="motel" class="visually-hidden" value="motel">
+                  <label class="radio" for="motel"><span class="radio-mark-field"></span>Мотель</label>
                 </li>
                 <li class="housing-option">
-                  <input type="radio" name="options-of-housing" id="apartments" value="apartments">
-                  <label for="apartments">Аппартаменты</label>
+                  <input type="radio" name="options-of-housing" id="apartments" class="visually-hidden" value="apartments">
+                  <label class="radio" for="apartments"><span class="radio-mark-field"></span>Аппартаменты</label>
                 </li>
               </ul>
             </fieldset>
             <fieldset class="cost fieldset">
               <legend class="fieldset-header">Стоимость, ₽:</legend>
               <div class="cost-fields">
-                <label class="min-price-field-label"><input type="number" name="min-price-field" class="min-price-field" id="min-price-field" value="0">
-                <span class="span-from">от</span></label>
-                <label class="max-price-field-label"><input type="number" name="max-price-field" class="max-price-field" id="max-price-field" value="9000">
+                <label class="min-price-field-label"><input type="number" name="min-price-field" class="min-price-field" id="min-price-field" placeholder="0" value="0"> <span class="min-price-field-conditions"></span>
+                <span class="span-from">от</span> </label>
+                <label class="max-price-field-label"><input type="number" name="max-price-field" class="max-price-field" id="max-price-field" placeholder="0" value="9000"> <span class="max-price-field-conditions"></span>
                 <span class="span-to">до</span></label>
               </div>
               <div class="range-scale">
-                <div class="back-scale"></div>
-                <div class="front-scale"></div>
-                <button type="button" class="slider-left"><span class="visually-hidden">Левый ползунок</span></button>
-                <button type="button" class="slider-right"><span class="visually-hidden">Правый ползунок</span></button>
+                <div class="scale">
+                  <div class="active-scale"></div>
+                  <button type="button" class="slider slider-left"><span class="visually-hidden">Левый ползунок</span></button>
+                  <button type="button" class="slider slider-right"><span class="visually-hidden">Правый ползунок</span></button>
+                </div>
               </div>
             </fieldset>
             <div class="buttons">

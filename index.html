@@ -11,8 +11,8 @@
         <nav class="navigation">
           <img src="images/logo.svg" width="140" height="70" alt="логотип Седона" class="logo logo-main">
           <ul class="navigation-list">
-            <li class="navigation-item">
-              <a class="navigation-link active-page" href="#">Главная</a>
+            <li class="navigation-item active-page">
+              <a class="navigation-link" href="#">Главная</a>
             </li>
             <li class="navigation-item">
               <a class="navigation-link" href="#">О Седоне</a>
@@ -139,6 +139,66 @@
           </svg>
           </a>
       </footer>
+    </div>
+    <div class="modal-container">
+      <div class="modal">
+        <button type="button" class="modal-close-button">
+          <span class="visually-hidden">Закрыть</span><span class="close-button-background-image"></span>
+        </button>
+        <section class="modal-content">
+          <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+          <form class="booling-form" action="#" method="post">
+            <p class="visit-dates">
+              <label class="arrival-date-label visit-date-label" for="arrival-date">Дата заезда:</label>
+              <input type="text" class="arrival-date visit-date" id="arrival-date" required value="27 апреля 2020">
+              <span class="arrival-date-comment">Мы не можем отправить вас в прошлое!</span>
+            </p>
+            <p class="visit-dates">
+              <label class="departure-date-label visit-date-label" for="departure-date">Дата выезда:</label>
+              <input type="text" class="departure-date visit-date" id="departure-date" required value="1 сентября 2021">
+              <span class="departure-date-comment">На эти даты есть свободные номера. Пока есть.</span>
+            </p>
+            <p class="information-about-visitors">
+              <label for="number-of-adults" class="number-of-visitors-label ">Взрослые:</label>
+              <button class="minus-button" type="button">
+                <span class="visually-hidden">кнопка уменьшить</span>
+                <span class="count-button-focus">
+                  <span class="minus-symbol"></span>
+                </span>
+              </button>
+              <input type="number" class="number-of-adults number-of-visitors" id="number-of-adults" value="2">
+              <button class="plus-button" type="button">
+                <span class="count-button-focus">
+                  <span class="minus-symbol"></span>
+                  <span class="minus-symbol"></span>
+                </span>
+                <span class="visually-hidden">кнопка добавить</span>
+              </button>
+              <span class="number-of-childs-label number-of-childs-label-icon"><label for="number-of-childs" class="number-of-visitors-label number-of-childs-label">Дети:</label>
+                <span class="tooltip">
+                  <button class="tooltip-toggle" type="button"><span class="visually-hidden">Подсказка</span></button>
+                  <span class="tooltip-text">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                </span>
+              </span>
+              <button class="minus-button" type="button">
+                <span class="visually-hidden">кнопка уменьшить</span>
+                <span class="count-button-focus">
+                  <span class="minus-symbol"></span>
+                </span>
+              </button>
+              <input type="number" class="number-of-childs number-of-visitors" id="number-of-childs" value="2">
+              <button class="plus-button" type="button">
+                <span class="count-button-focus">
+                  <span class="minus-symbol"></span>
+                  <span class="minus-symbol"></span>
+                </span>
+                  <span class="visually-hidden">кнопка добавить</span>
+              </button>
+            </p>
+            <button type="submit" class="modal-submit-button">Найти</button>
+          </form>
+        </section>
+      </div>
     </div>
   </body>
 </html>

@@ -362,13 +362,15 @@ li.advantage:nth-child(3) {
 
 .cost-fields {
   display: flex;
+  margin-bottom: 44px;
 }
-.cost-fields input::-webkit-outer-spin-button, .cost-fields input::-webkit-inner-spin-button {
+ .cost-fields input::-webkit-outer-spin-button, .cost-fields input::-webkit-inner-spin-button, .information-about-visitors input::-webkit-outer-spin-button, .information-about-visitors input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   appearance: none;
 }
 
 .min-price-field, .max-price-field {
+box-sizing: border-box;
 font-family: 'PT Sans';
 font-style: normal;
 font-weight: 700;
@@ -383,6 +385,7 @@ text-indent: 20px;
 .min-price-field {
   border-radius: 4px 0 0 4px;
   margin-right: 2px;
+  position: relative;
 }
 
 .max-price-field {
@@ -974,11 +977,11 @@ html {
     color: rgba(255, 255, 255, 0.3);
   }
 
-  .button-subscribe:hover, .button-subscribe:focus, .apply-button:hover, .apply-button:focus, .to-favorite:hover, .to-favorite:focus, .pagination-link:not(.pagination-active):hover,.pagination-link:not(.pagination-active):focus  {
+  .button-subscribe:hover, .button-subscribe:focus, .apply-button:hover, .apply-button:focus, .to-favorite:hover, .to-favorite:focus, .pagination-link:not(.pagination-active):hover,.pagination-link:not(.pagination-active):focus, .modal-submit-button:hover, .modal-submit-button:focus  {
     background-color:#68A2CA;
   }
 
-  .button-subscribe:active, .apply-button:active, .to-favorite:active, .pagination-link:not(.pagination-active):active {
+  .button-subscribe:active, .apply-button:active, .to-favorite:active, .pagination-link:not(.pagination-active):active, .modal-submit-button:active {
     background-color: #82B3D3;
     color:rgba(255, 255, 255, 0.3);
   }
@@ -1012,23 +1015,55 @@ html {
     border: 2px solid #3F5E72;
   }
 
-  .min-price-field:hover, .max-price-field:hover {
+  .min-price-field:hover, .max-price-field:hover, .min-price-field:focus, .max-price-field:focus {
     background-color: #E6E6E6;
   }
 
-  .min-price-field:focus:not(:focus-visible), .max-price-field:focus:not(:focus-visible) {
-    box-shadow: inset 0 0 0 2px #000000;
-    background-color: #F2F2F2;
+   .min-price-field:focus + .min-price-field-conditions {
+    width: 143px;
+    position: absolute;
+    height: 48px;
+    border:3px solid #83B3D3;
+    border-radius: 7px 0 0 7px;
+    background-color:transparent;
+    left: -3px;
+    top: -3px;
+    z-index: 1;
   }
 
-   .min-price-field:focus-visible, .max-price-field:focus-visible {
-    background-color: #E6E6E6;
-    box-shadow: inset 0 0 0 2px #83B3D3;
+  .max-price-field:focus + .max-price-field-conditions {
+    width: 143px;
+    position: absolute;
+    height: 48px;
+    border:3px solid #83B3D3;
+    border-radius:0 7px 7px 0;
+    background-color:transparent;
+    left: -3px;
+    top: -3px;
+    z-index: 1;
   }
 
-  .min-price-field:active, .max-price-field:active {
-    box-shadow: inset 0 0 0 2px #000000;
+
+  .min-price-field:focus:not(:placeholder-shown) {
+    border: 2px solid #000000;
+    outline: none;
     background-color: #F2F2F2;
+    text-indent: 18px;
+  }
+
+  .min-price-field:focus:not(:placeholder-shown) + .min-price-field-conditions {
+    display: none;
+  }
+
+  .max-price-field:focus:not(:placeholder-shown) {
+    border: 2px solid #000000;
+    outline: none;
+    background-color: #F2F2F2;
+    text-indent: 18px;
+  }
+
+  .max-price-field:focus:not(:placeholder-shown) + .max-price-field-conditions {
+    display: none;
   }
 
   .display-button-1:hover, .display-button-2:hover, .display-button-3:hover {
@@ -1088,17 +1123,18 @@ html {
     background-color: #756257;
     height: 2px;
     position: absolute;
-    bottom: -20px;
+    bottom: -21px;
     left: 0;
   }
 
-  .checkbox {
+  .checkbox, .radio {
     position: relative;
     display: block;
     padding-left: 36px;
+    z-index: 1;
   }
 
-  .mark-field {
+  .checkbox-mark-field {
     display: block;
     width: 20px;
     height: 20px;
@@ -1107,25 +1143,397 @@ html {
     left: 0;
     top: 1.5px;
     border-radius: 4px;
-    z-index: 1;
   }
 
   .input[type="checkbox"], input[type="radio"] {
     outline: none;
   }
-  input[type="checkbox"]:checked + .checkbox .mark-field {
+  input[type="checkbox"]:checked + .checkbox .checkbox-mark-field {
     background-image:url(../images/checkbox-mark.svg);
     background-repeat: no-repeat;
     background-position: bottom 4.1px left 4px;
   }
 
-  input[type="checkbox"]:focus + .checkbox .mark-field::after {
+  input[type="checkbox"]:focus + .checkbox .checkbox-mark-field::after {
     content: " ";
-    width: 23px;
-    height: 23px;
-    border-radius: 4px;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    border-radius: 5px;
     left: -3px;
     top: -3px;
     background-color:#83B3D3;
     z-index: -1;
+  }
+
+  input[type="checkbox"]:hover + .checkbox {
+    opacity: 0.6;
+  }
+
+  input[type="checkbox"]:active + .checkbox {
+    opacity: 0.3;
+  }
+
+  .radio-mark-field {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 0;
+    top: 1.5px;
+    border-radius: 50%;
+  }
+
+  input[type="radio"]:checked + .radio .radio-mark-field::after {
+    position: absolute;
+    content: " ";
+    width:10px;
+    height: 10px;
+    border-radius: 50%;
+    left: 5px;
+    top: 5px;
+    background-color: #3F5E72;
+  }
+
+  input[type="radio"]:focus + .radio .radio-mark-field::before {
+    content: " ";
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    border-radius: 50%;
+    left: -3px;
+    top: -3px;
+    background-color:#83B3D3;
+    z-index: -1;
+  }
+
+  input[type="radio"]:hover + .radio {
+    opacity: 0.6;
+  }
+
+  input[type="radio"]:active + .radio {
+    opacity: 0.3;
+  }
+
+  .range-scale {
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+  }
+
+  .scale {
+    height: 4px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .active-scale {
+    position: absolute;
+    background-color: #FFFFFF;
+    height: 4px;
+    width: 226px;
+    left: 0;
+    top: 0;
+  }
+
+  .slider {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+  }
+
+  .slider-left {
+    left: 0;
+    top: -8px;
+  }
+
+  .slider-right {
+    top: -8px;
+    left: 206.5px;
+  }
+
+  .modal-container {
+    background-color: rgba(242, 242, 242, 0.8);
+    position: fixed;
+    top: 0;
+    padding-top: 392.5px;
+    /* display: none; */
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal {
+    position: relative;
+    margin: auto;
+    padding: 64px 70px 64px 70px;
+    background-color: #ffffff;
+    width: 717px;
+    border-radius: 30px;
+    box-sizing: border-box;
+  }
+
+  .modal-close-button {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    top: 61px;
+    right: 49px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    background-color: #F2F2F2;
+  }
+
+  .close-button-background-image {
+    background-image: url(../images/close.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-close-button:hover, .modal-close-button:focus {
+    background-color: #E6E6E6;
+  }
+
+  .modal-close-button:focus {
+    border: 3px solid #83B3D3;
+  }
+
+  .modal-close-button:active {
+    background-color: #F2F2F2;
+  }
+
+  .modal-close-button:active .close-button-background-image {
+    opacity: 0.3;
+  }
+
+  .modal-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    margin-bottom: 64px;
+  }
+
+  .visit-date-label {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    align-self: center;
+    min-width: 137px;
+  }
+
+
+  .visit-date {
+    background: #F2F2F2;
+    border-radius: 4px;
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    flex-grow: 1;
+    min-width: 300px;
+    background-image: url(../images/date-icon.svg);
+    background-repeat: no-repeat;
+    background-position: top 14px right 20px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+  }
+
+  .visit-dates {
+    display: flex;
+    margin-bottom: 23px;
+    flex-wrap: wrap;
+  }
+
+  .arrival-date-comment {
+    margin-left: 137px;
+    padding-left: 20px;
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    align-items: center;
+    color: #FF5757;
+  }
+
+  .departure-date-comment {
+    margin-left: 137px;
+    padding-left: 20px;
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    align-items: center;
+    color: #333333;
+  }
+
+  .information-about-visitors {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
+  .number-of-visitors-label {
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    min-width: 137px;
+  }
+
+  .number-of-childs-label {
+    min-width: 131px;
+  }
+
+  .minus-button {
+    width: 40px;
+    height: 48px;
+    background-color: #F2F2F2;
+    border-radius: 4px 0 0 4px;
+    position: relative;
+  }
+
+  .minus-symbol {
+    position: absolute;
+    top: 9px;
+    left: 3px;
+    width: 14px;
+    height: 2px;
+    background-color:#756157;
+  }
+
+  .number-of-visitors {
+    font-family: 'PT Sans';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    background-color:#F2F2F2;
+    width: 31px;
+    height: 48px;
+    text-align: center;
+  }
+
+  .plus-button {
+    width: 40px;
+    height: 48px;
+    background-color: #F2F2F2;
+    border-radius: 0 4px 4px 0;
+    position: relative;
+  }
+
+  .plus-button .minus-symbol:nth-child(1) {
+    transform: rotate(90deg);
+    background-blend-mode:exclusion;
+  }
+
+  .number-of-childs-label {
+    margin-left: auto;
+  }
+
+  .count-button-focus {
+    opacity:0.3;
+    position: absolute;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border: 3px solid transparent;
+    top: 11px;
+    left: 7px;
+  }
+
+  .plus-button:hover .count-button-focus .minus-symbol, .plus-button:focus .count-button-focus .minus-symbol, .plus-button:active .count-button-focus .minus-symbol, .minus-button:hover .count-button-focus .minus-symbol, .minus-button:focus .count-button-focus .minus-symbol, .minus-button:active .count-button-focus .minus-symbol {
+    background-color: #000000;
+  }
+
+  .plus-button:hover .count-button-focus, .minus-button:hover .count-button-focus {
+    opacity: 1;
+  }
+
+  .plus-button:focus .count-button-focus, .minus-button:focus .count-button-focus {
+    border: 3px solid #82B3D3;
+    border-radius: 7px;
+    opacity: 1;
+  }
+
+  .plus-button:active .count-button-focus, .minus-button:active .count-button-focus {
+    opacity: 0.2;
+  }
+
+  .modal-submit-button {
+    width: 100%;
+    padding: 18px 77px 18px 77px;
+    background-color: #83B3D3;
+    border-radius: 10px;
+    font-family: 'PT Sans';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .tooltip-toggle {
+    display: block;
+    background-color: #83B3D3;
+    border-radius: 50%;
+    background-image: url(../images/tooltip-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+  }
+
+  .tooltip-toggle:hover + .tooltip-text, .tooltip-toggle:focus + .tooltip-text {
+    display: block;
+  }
+
+  .tooltip-text {
+    display: none;
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 15px 18px 18px 22px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 10px;
+    width: 216px;
+    position: absolute;
+    top: 26px;
+    margin-top: 15px;
+    left: -120px;
+    border: none;
+  }
+
+  .tooltip-text::before {
+    content: " ";
+    position: absolute;
+    width: 19px;
+    height: 9px;
+    background-image: url(../images/tooltip-text-before.svg);
+    background-position: bottom 0;
+    background-repeat: no-repeat;
+    top: -8.7px;
+    left: 118px;
+    border: none;
+  }
+
+  .tooltip {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -1px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .number-of-childs-label-icon {
+    position: relative; padding-right: 36px;
   }
