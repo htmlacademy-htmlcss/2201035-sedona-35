@@ -452,6 +452,12 @@ select {
   border-radius:4px;
   height: 49px;
   width: 292px;
+  background-image: url(../images/select-background.svg);
+  background-repeat: no-repeat;
+  background-position: right 20px top 18px;
+}
+
+select:not(:focus-visible) {
   outline: none;
 }
 
@@ -881,6 +887,7 @@ html {
     text-indent: 20px;
     line-height: 24px;
     color: #000000;
+    font-family: "PT Sans", sans-serif;
   }
 
   .index-email {
@@ -999,27 +1006,46 @@ html {
     opacity: 0.6;
   }
 
-  .reset-button:focus {
+  /* .reset-button:focus {
     border: 3px solid #83B3D3;
-  }
+  } */
 
   .reset-button:active {
     opacity: 0.3;
   }
 
-  select:hover, select:focus {
+   select:hover /*,  select:focus*/ {
     border: 2px solid #68A2CA;
+    outline: none;
   }
+
 
   select:active {
     border: 2px solid #3F5E72;
+    outline: none;
   }
 
-  .min-price-field:hover, .max-price-field:hover, .min-price-field:focus, .max-price-field:focus {
+  .min-price-field:hover, .max-price-field:hover, .min-price-field:focus, .max-price-field:focus, .email:hover, .email:focus, .visit-date:hover, .visit-date:focus, .number-of-visitors:hover, .number-of-visitors:focus {
     background-color: #E6E6E6;
   }
 
-   .min-price-field:focus + .min-price-field-conditions {
+  .email:focus:not(:placeholder-shown) {
+    border: 2px solid #000000;
+    outline: none;
+    background-color: #F2F2F2;
+    text-indent: 18px;
+  }
+
+  .visit-date:focus:not(:placeholder-shown) {
+    border: 2px solid #000000;
+    outline: none;
+    background-color: #F2F2F2;
+    padding-left: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+   /* .min-price-field:focus + .min-price-field-conditions {
     width: 143px;
     position: absolute;
     height: 48px;
@@ -1041,7 +1067,7 @@ html {
     left: -3px;
     top: -3px;
     z-index: 1;
-  }
+  } */
 
 
   .min-price-field:focus:not(:placeholder-shown) {
@@ -1070,9 +1096,9 @@ html {
     border: 2px solid #000000;
   }
 
-  .display-button-1:focus, .display-button-2:focus, .display-button-3:focus {
+  /* .display-button-1:focus, .display-button-2:focus, .display-button-3:focus {
     border: 2px solid #68A2CA;
-  }
+  } */
 
   .display-button-1:active, .display-button-2:active, .display-button-3:active {
     border: 2px solid #000000;
@@ -1258,8 +1284,7 @@ html {
     background-color: rgba(242, 242, 242, 0.8);
     position: fixed;
     top: 0;
-    padding-top: 392.5px;
-    /* display: none; */
+    display: flex;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1347,6 +1372,11 @@ html {
     font-weight: 700;
   }
 
+  .visit-date::placeholder, .min-price-field::placeholder, .max-price-field::placeholder {
+    opacity: 0.6;
+    color: #000000;
+  }
+
   .visit-dates {
     display: flex;
     margin-bottom: 23px;
@@ -1419,6 +1449,7 @@ html {
     width: 31px;
     height: 48px;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .plus-button {
@@ -1492,6 +1523,10 @@ html {
     height: 26px;
   }
 
+  .tooltip-toggle:hover, .tooltip-toggle:focus {
+    opacity: 0.6;
+  }
+
   .tooltip-toggle:hover + .tooltip-text, .tooltip-toggle:focus + .tooltip-text {
     display: block;
   }
@@ -1536,4 +1571,16 @@ html {
 
   .number-of-childs-label-icon {
     position: relative; padding-right: 36px;
+  }
+
+  .navigation-link:hover, .button-like:hover, .button-search:hover {
+    opacity: 0.6;
+  }
+
+  .navigation-link:active, .button-like:active, .button-search:active {
+    opacity: 0.3;
+  }
+
+  .modal-container-toggle {
+    display: none;
   }
