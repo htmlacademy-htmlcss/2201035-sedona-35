@@ -922,11 +922,11 @@ html {
   padding: 182px 70px 51px 70px;
 }
 
-.advantages-list .advantage:nth-child(n+2):nth-child(-n+4) .advantage-header {
+.advantage:nth-child(n+2):nth-child(-n+4) .advantage-header {
   position: relative;
 }
 
-.advantages-list .advantage:nth-child(n+2):nth-child(-n+4) .advantage-header::after {
+.advantage:nth-child(n+2):nth-child(-n+4) .advantage-header::after {
   content: " ";
   background-color: #000000;
   opacity: 0.3;
@@ -1552,7 +1552,7 @@ html {
   left: 7px;
 }
 
-.plus-button:hover .count-button-focus .minus-symbol, .plus-button:focus .count-button-focus .minus-symbol, .plus-button:active .count-button-focus .minus-symbol, .minus-button:hover .count-button-focus .minus-symbol, .minus-button:focus .count-button-focus .minus-symbol, .minus-button:active .count-button-focus .minus-symbol {
+.plus-button:hover .minus-symbol, .plus-button:focus .minus-symbol, .plus-button:active .minus-symbol, .minus-button:hover .minus-symbol, .minus-button:focus .minus-symbol, .minus-button:active .minus-symbol {
   background-color: #000000;
 }
 
